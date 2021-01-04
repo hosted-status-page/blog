@@ -8,24 +8,23 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'hosted-status-page', // Usually your GitHub org/user name.
   projectName: 'blog', // Usually your repo name.
+  scripts: [{src: 'https://traffic.hostedstatus.page/js/index.js', async: true, defer: true, 'data-domain': 'blog.hostedstatus.page'}],
   themeConfig: {
     navbar: {
-      title: 'HSP',
+      title: 'Hosted Status Page Blog',
       logo: {
         alt: 'HSP Logo',
         src: 'img/hsplogo.svg',
       },
       items: [
         {
-          to: 'docs/',
-          activeBasePath: 'docs',
-          label: 'Docs',
+          to: 'https://help.hostedstatus.page',
+          label: '🆘 Help and Support',
           position: 'left',
         },
-        {to: 'blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/hosted-status-pag',
-          label: 'GitHub',
+          href: 'https://github.com/hosted-status-page',
+          label: '🖥 HSP on GitHub',
           position: 'right',
         },
       ],
@@ -33,19 +32,6 @@ module.exports = {
     footer: {
       style: 'dark',
       links: [
-        {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Style Guide',
-              to: 'docs/',
-            },
-            {
-              label: 'Second Doc',
-              to: 'docs/doc2/',
-            },
-          ],
-        },
         {
           title: 'Community',
           items: [
@@ -63,8 +49,8 @@ module.exports = {
           title: 'More',
           items: [
             {
-              label: 'Blog',
-              to: 'blog',
+              label: 'Help and Support',
+              to: 'https://help.hostedstatus.page',
             },
             {
               label: 'GitHub',
@@ -73,7 +59,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © 2020-${new Date().getFullYear()} <a href="https://hostedstatus.page">Hosted Status Page</a>. All rights reserved.`,
     },
   },
   presets: [
@@ -88,9 +74,10 @@ module.exports = {
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/main/blog/',
+          path: './blog',
+          routeBasePath: '/', // Set this value to '/'.
+          blogTitle: 'Hosted Status Page Blog!',
+          blogDescription: 'We write both non-technical and technical stuff here :)',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
